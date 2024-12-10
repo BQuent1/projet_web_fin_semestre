@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Les Mains Propres</title>
+    <link rel="icon" href="../../assets/icon.png" type="image/png">
+    <link href="./css/feuille_style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+
+    <header id="leHaut">
+        <a href="index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
+        <a href="index.html" class="header_buttons">Accueil</a>
+        <a href="facture.html" class="header_buttons">Facturation</a>
+        <a href="workshop.html" class="header_buttons">Workshop</a>
+
+        <a href="menu.html"><img src="../../assets/img_menu.png" id="menu_img" width="80px"> </a>
+
+    </header>
+
+    <br><br>
+    <div id="arrowTop" hidden></div>
+
+    <h2 id="titre_facture">Module de facturation</h2>
+    <p>Cette page vous permet de nous soumettre vos informations de facturation</p>
+    <div class="bandeau">
+        <a class="lien" href="#">Informations</a>
+        <a class="lien" href="#faq">FAQ</a>
+        <a class="lien" href="mailto:contact@lesmainspropres.fr" target="_blank">Nous contacter</a>
+    </div>
+    <div class="corps_formulaire">
+        <br>
+        <h3>Informations de facturation</h3>
+        <br>
+        <label class="titres" class="hors_fieldset">Fournisseur</label>
+
+        <form id="monFormulaire" action="result.html" method="post">
+
+            <select class="liste_deroulante hors_fieldset" id="select_fournisseur">
+                <option value="fournisseur1">Fournisseur 1</option>
+                <option value="fournisseur2">Fournisseur 2</option>
+                <option value="fournisseur3">Fournisseur 3</option>
+                <option value="Autre">Autre</option>
+            </select>
+
+            <input type="text" id="nouv_fournisseur" placeholder="Entrez un nouveau fournisseur" style="display: none;">
+
+            <br>
+            <br>
+            <div class="conteneur_fieldset">
+
+                <fieldset class="partie_entreprise">
+                    <legend>Entreprise</legend><br>
+                    <label class="titres">Société*</label><br>
+                    <input type="text" id="societe" placeholder="Nom de la société" required>
+                    <br>
+                    <br>
+
+                    <label class="titres" for="">N°TVA</label><br>
+                    <input id="tva" type="text" name="tva" placeholder="TVA">
+                    <p class="messages_verif" id="verif_tva" style="display: none;"></p>
+                    <br>
+                    <br>
+
+                    <label class="titres">Adresse</label><br>
+                    <textarea class="adresse_txta" placeholder="Adresse complète" rows="3" cols="40"></textarea>
+                    <br>
+                    <br>
+
+                    <label class="titres">Code postal</label><br>
+                    <input id="code_postal" type="number" name="CP" placeholder="CP">
+                    <p class="messages_verif" id="message_cp" style="display: none;"></p>
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <label class="titres">Ville</label><br>
+                    <select id="select_ville">
+                        <option disabled>Ville...</option>
+                    </select>
+                    <br>
+                    <br>
+
+                </fieldset>
+
+                <br>
+                <br>
+
+                <fieldset class="partie_representant">
+                    <legend>Représentant</legend><br>
+                    <label class="titres">Genre</label>
+                    <br>
+                    <label class="option_radio"><input id="radio" type="radio" name="genre" value="femme"> Femme</label>
+                    <label class="option_radio"><input id="radio" type="radio" name="genre" value="homme"> Homme</label>
+                    <label class="option_radio"><input id="radio" type="radio" name="genre" value="non spe"> Non
+                        spécifié</label>
+                    <br>
+                    <br>
+
+                    <label class="titres">Nom*</label><br>
+                    <input id="nom" type="text" id="nom" name="nom" placeholder="Nom de famille" required>
+                    <br>
+                    <br>
+
+                    <label class="titres">Prenom*</label><br>
+                    <input type="text" id="prenom" placeholder="Prénom" required>
+                    <br>
+                    <br>
+
+                    <label class="titres">E-mail*</label><br>
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <br>
+                    <br>
+
+                    <label class="titres">Téléphone</label><br>
+                    <input id="telephone" type="tel" name="tel" placeholder="Téléphone">
+                    <p class="messages_verif" id="verif_telephone" style="display: none;"></p>
+                    <br>
+                    <br>
+
+                </fieldset>
+            </div>
+            <br>
+            <br>
+
+
+
+            <div>
+
+                <button id="search_button">Rechercher</button>
+            </div>
+            <div id="map" style="height: 400px;"></div>
+            
+
+            <label class="titres" id="hors_fieldset">Commentaires</label><br>
+            <textarea id="hors_fieldset" name="message" rows="4" cols="50"
+                placeholder="Informations supplémentaires à nous faire parvenir"></textarea>
+            <br> <br>
+
+            <label id="obligatoire">*:Champs obligatoires</label><br><br>
+
+
+            <input id="hors_fieldset" class="envoi_btn" type="submit" value="ENVOYER">
+
+            <a href="facture.html"><input type="reset" name="reset" id="reset_button" value="Réinitialiser"></a>
+        </form>
+
+        <br>
+
+        <br>
+        <br>
+
+        <h3 id="faq">Questions fréquentes</h3>
+
+        <ul class="questions_freq">
+            <p class="quest">Mon fournisseur n'apparait pas dans la liste, que faire ?</p>
+            <p>Séléctionnez "Autres" dans la liste puis indiquer votre fournisseur dans le champ "Commentaires"</p>
+            <br> <br>
+            <p class="quest">Quel est le délai de réponse ?</p>
+            <p>Nos équipes traitement votre demande au plus vite. Vous obtiendrez généralement une réponse sous 48
+                heures</p>
+            <br> <br>
+            <p class="quest">Comment nous contacter ?</p>
+            <p>Vous pouvez utiliser notre <a href="#">formulaire de contact</a> ou nous contacter par mail à <a
+                    href="mailto:contact@lesmainspropres.fr" target="_blank">contact@lesmainspropres.fr</a></p>
+            <br> <br>
+        </ul>
+
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Les Mains Propres. Tous droits réservés.</p>
+    </footer>
+
+</body>
+
+<script src="js/script_form.js"></script>
+
+
+</html>
