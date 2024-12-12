@@ -56,45 +56,7 @@
             <div class="conteneur_fieldset">
 
                 <fieldset class="partie_entreprise">
-                    <legend>Entreprise</legend><br>
-                    <label class="titres">Société*</label><br>
-                    <input type="text" id="societe" placeholder="Nom de la société" required>
-                    <br>
-                    <br>
-
-                    <label class="titres" for="">N°TVA</label><br>
-                    <input id="tva" type="text" name="tva" placeholder="TVA">
-                    <p class="messages_verif" id="verif_tva" style="display: none;"></p>
-                    <br>
-                    <br>
-
-                    <label class="titres">Adresse</label><br>
-                    <textarea class="adresse_txta" placeholder="Adresse complète" rows="3" cols="40"></textarea>
-                    <br>
-                    <br>
-
-                    <label class="titres">Code postal</label><br>
-                    <input id="code_postal" type="number" name="CP" placeholder="CP">
-                    <p class="messages_verif" id="message_cp" style="display: none;"></p>
-                    <br>
-                    <br>
-                    <br>
-
-
-                    <label class="titres">Ville</label><br>
-                    <select id="select_ville">
-                        <option disabled>Ville...</option>
-                    </select>
-                    <br>
-                    <br>
-
-                </fieldset>
-
-                <br>
-                <br>
-
-                <fieldset class="partie_representant">
-                    <legend>Représentant</legend><br>
+                    <legend>Dites-nous en plus</legend><br>
                     <label class="titres">Genre</label>
                     <br>
                     <label class="option_radio"><input id="radio" type="radio" name="genre" value="femme"> Femme</label>
@@ -125,53 +87,73 @@
                     <br>
                     <br>
 
+
+                    <label id="obligatoire">*:Champs obligatoires</label><br><br>
                 </fieldset>
+
+
+                <fieldset>
+                    <legend>Adresse de livraison</legend>
+
+
+                    <label class="titres">Adresse</label><br>
+                    <textarea class="adresse_txta" placeholder="Adresse complète" rows="3" cols="40"></textarea>
+                    <br>
+                    <br>
+
+                    <label class="titres">Code postal</label><br>
+                    <input id="code_postal" type="number" name="CP" placeholder="CP">
+                    <p class="messages_verif" id="message_cp" style="display: none;"></p>
+                    <br>
+                    <br>
+
+                    <label class="titres">Ville</label><br>
+                    <select id="select_ville">
+                        <option disabled>Ville...</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <button id="search_button">Rechercher mon adresse</button>
+
+                </fieldset>
+
+                <div id="map" style="height: 400px;"></div>
             </div>
             <br>
             <br>
 
 
 
-            <div>
-
-                <button id="search_button">Rechercher</button>
-            </div>
-            <div id="map" style="height: 400px;"></div>
-            
-
-            <label class="titres" id="hors_fieldset">Commentaires</label><br>
-            <textarea id="hors_fieldset" name="message" rows="4" cols="50"
-                placeholder="Informations supplémentaires à nous faire parvenir"></textarea>
-            <br> <br>
-
-            <label id="obligatoire">*:Champs obligatoires</label><br><br>
 
 
-            <input id="hors_fieldset" class="envoi_btn" type="submit" value="ENVOYER">
+    </div>
 
-            <a href="facture.html"><input type="reset" name="reset" id="reset_button" value="Réinitialiser"></a>
-        </form>
+    <input id="hors_fieldset" class="envoi_btn" type="submit" value="ENVOYER">
 
-        <br>
+    <a href="facture.html"><input type="reset" name="reset" id="reset_button" value="Réinitialiser"></a>
+    </form>
 
-        <br>
-        <br>
+    <br>
 
-        <h3 id="faq">Questions fréquentes</h3>
+    <br>
+    <br>
 
-        <ul class="questions_freq">
-            <p class="quest">Mon fournisseur n'apparait pas dans la liste, que faire ?</p>
-            <p>Séléctionnez "Autres" dans la liste puis indiquer votre fournisseur dans le champ "Commentaires"</p>
-            <br> <br>
-            <p class="quest">Quel est le délai de réponse ?</p>
-            <p>Nos équipes traitement votre demande au plus vite. Vous obtiendrez généralement une réponse sous 48
-                heures</p>
-            <br> <br>
-            <p class="quest">Comment nous contacter ?</p>
-            <p>Vous pouvez utiliser notre <a href="#">formulaire de contact</a> ou nous contacter par mail à <a
-                    href="mailto:contact@lesmainspropres.fr" target="_blank">contact@lesmainspropres.fr</a></p>
-            <br> <br>
-        </ul>
+    <h3 id="faq">Questions fréquentes</h3>
+
+    <ul class="questions_freq">
+        <p class="quest">Mon fournisseur n'apparait pas dans la liste, que faire ?</p>
+        <p>Séléctionnez "Autres" dans la liste puis indiquer votre fournisseur dans le champ "Commentaires"</p>
+        <br> <br>
+        <p class="quest">Quel est le délai de réponse ?</p>
+        <p>Nos équipes traitement votre demande au plus vite. Vous obtiendrez généralement une réponse sous 48
+            heures</p>
+        <br> <br>
+        <p class="quest">Comment nous contacter ?</p>
+        <p>Vous pouvez utiliser notre <a href="#">formulaire de contact</a> ou nous contacter par mail à <a
+                href="mailto:contact@lesmainspropres.fr" target="_blank">contact@lesmainspropres.fr</a></p>
+        <br> <br>
+    </ul>
 
     </div>
 

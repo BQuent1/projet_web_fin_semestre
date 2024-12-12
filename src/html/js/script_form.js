@@ -57,7 +57,7 @@ val_code_postal.addEventListener("input", async function () {
         var data = await fetchResult.json();
         var nbr_commune = data.length;
 
-        console.log(data);
+        //console.log(data);
 
         for (let i = 0; i < nbr_commune; i++) {
             var opt = document.createElement("option");
@@ -131,10 +131,8 @@ async function afficherAdresseSurCarte() {
             return;
         }
 
-        // Récupération des coordonnées
         const { lat, lon } = data[0];
 
-        // Centrage de la carte et ajout d'un marqueur
         map.setView([lat, lon], 15);
         L.marker([lat, lon]).addTo(map).bindPopup(`Adresse trouvée : ${adresseComplete}`).openPopup();
     } catch (error) {
@@ -143,20 +141,7 @@ async function afficherAdresseSurCarte() {
     }
 }
 
-// Écouteur d'événement sur le bouton de recherche
 buttonSearch.addEventListener('click', afficherAdresseSurCarte);
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //vérification num téléphone
@@ -180,30 +165,6 @@ val_num_telephone.addEventListener("input", function () {
     val_num_telephone.reportValidity();
 })
 
-
-//verification num TVA
-ex_reg_tva = /^FR\d{11}$/;
-val_tva.addEventListener("input", function () {
-    if (val_tva.value === "") {
-        message_tva.style.display = "none";
-        val_tva.setCustomValidity("");
-    }
-
-    else if (ex_reg_tva.test(val_tva.value)) {
-        message_tva.style.display = "block";
-        message_tva.textContent = "✓";
-        message_tva.style.color = "green";
-        val_tva.setCustomValidity("");
-
-    }
-
-    else {
-        message_tva.style.display = "block";
-        val_tva.setCustomValidity("Merci d'entrer un numéro de TVA valide (FR+11 chiffres)");
-    }
-    val_tva.reportValidity();
-
-})
 
 
 //mettre le nom en majuscule
