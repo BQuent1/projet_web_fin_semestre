@@ -1,9 +1,9 @@
 html {
     scroll-behavior: smooth;
-  }
+}
 
 
-#logo{
+#logo {
     margin-left: 20px;
     margin-top: 20px;
 
@@ -18,11 +18,11 @@ html {
     right: 5em;
     cursor: pointer;
     z-index: 1;
-  }
+}
 
-  #arrowTop::before {
+#arrowTop::before {
     content: '▲';
-  }
+}
 
 .header_buttons {
     padding: 3%;
@@ -65,136 +65,192 @@ html {
     background-position: -100% 0;
 }
 
-#menu_img{
+#menu_img {
     display: none;
 }
 
 
-@media (max-width: 1300px){
-    #menu_img{
+@media (max-width: 1300px) {
+    #menu_img {
         display: inline-block;
         position: absolute;
         right: 0;
-        top:0;
+        top: 0;
         margin-right: 40px;
         margin-top: 50px;
     }
-    .header_buttons{
+
+    .header_buttons {
         display: none;
     }
 }
 
 
 
-.bienvenu_txt{
-    font-family: 'Trebuchet MS', sans-serif;    
-    overflow: hidden; /* Cache le texte dépassant de la zone de texte */
-    white-space: nowrap; /* Évite le saut de ligne */
+.bienvenu_txt {
+    font-family: 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+    /* Cache le texte dépassant de la zone de texte */
+    white-space: nowrap;
+    /* Évite le saut de ligne */
     animation: typeWriter 5s steps(50) forwards;
     margin-left: 40px;
 }
 
-h2, h3{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+h2,
+h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 40px;
 
 }
 
-.messages_verif{
+.messages_verif {
     font-family: "century gothic";
     font-size: 12px;
     font-weight: 400;
     margin-bottom: -40px;
 }
 
-#nouv_fournisseur{
+#nouv_fournisseur {
     margin-left: 40px;
     margin-top: 10px;
     border: solid 1px black;
     width: 12rem;
 }
 
-.corps_formulaire{
+.corps_formulaire {
     background-color: #f3f3f3;
-}
-
-.partie_entreprise{
-    margin-right: 20px;
-    margin-left: 40px;
-    float: left;
-
-}
-
-.conteneur_fieldset{
     overflow: auto;
 }
 
-fieldset{
-    display: inline-block;
-    font-family: "Trebuchet MS";
-    font-weight: bold;
-    vertical-align: super;
-    padding-right: 200px;
+#conteneur_fieldset {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    gap: 2em;
+}
+
+#partie_entreprise,
+#partie_droite {
+    flex: 1;
+    min-width: 0;
+}
+
+#partie_droite {
+    display: flex;
+    flex-direction: column;
+    gap: 1em; 
+}
+
+fieldset {
+    width: 100%; 
+    box-sizing: border-box; 
+    font-family: 'Trebuchet MS';
+}
+
+#map {
+    height: 30em;
 }
 
 
-input, button, textarea, select, ul, p{
+#search_button {
+    background-color: coral;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 10px;
+    text-align: center;
+    margin-bottom: 1.2em;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#search_button.disabled{
+    background-color: #b7b7b7;
+    pointer-events: none;
+}
+
+button:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+
+#bouton_submit_reset{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+}
+
+
+
+input,
+button,
+textarea,
+select,
+ul,
+p {
     font-family: "century gothic";
     margin-left: 10px;
-    margin-top:5px ;
+    margin-top: 5px;
     border-radius: 5px;
     border-style: none;
     padding: 3px;
     resize: none;
 }
 
-.titres{
+.titres {
     font-weight: bold;
     color: coral;
     font-family: "Trebuchet MS";
     margin-left: 10px;
 }
 
-#hors_fieldset{
-    margin-left: 40px;
-}
-
-::placeholder{
+::placeholder {
     color: lightgrey;
 }
 
-.option_radio{
+.option_radio {
     font-family: 'Trebuchet MS';
     margin-left: 0px;
     font-weight: 50;
 }
 
-.lien{
+.lien {
     font-family: "Calibri";
     margin-left: 40px;
     color: white;
     text-decoration: none;
 }
 
-.liste_deroulante, #select_fournisseur{
+.liste_deroulante,
+#select_fournisseur {
     padding: 3px;
     border-radius: 5px;
 }
 
 
-
-#obligatoire{
+#obligatoire {
     font-style: italic;
     color: black;
     font-size: 12px;
     font-weight: 100;
-    margin-left: 40px;
+    margin-left: 10px;
     font-family: 'Trebuchet MS';
 }
 
 
-.envoi_btn{
-    padding:10px;
+#envoi_btn {
+    cursor: pointer;
+    padding: 10px 10px;
     font-family: "Trebuchet MS";
     font-size: 14px;
     background-color: coral;
@@ -202,10 +258,15 @@ input, button, textarea, select, ul, p{
     border-radius: 5px;
     font-weight: bold;
     border-style: none;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.218);
+    margin-left: 0;
+    margin-top: 0;
+
 }
 
-#reset_button{
-    padding: 10px;
+#reset_button {
+    padding: 10px 10px;
     font-family: "Trebuchet MS";
     font-weight: lighter;
     color: black;
@@ -213,65 +274,73 @@ input, button, textarea, select, ul, p{
     border: solid black 1px;
     text-transform: uppercase;
     font-weight: 100;
+    cursor: pointer;
+    margin-left: 1em;
+    margin-top: 0;
 }
 
-.questions_freq, #faq{
+.questions_freq,
+#faq {
     margin-left: 40px;
 
 }
 
-.quest{
+.quest {
     font-weight: bold;
 }
 
 
 
-
-
 @keyframes typeWriter {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
 
-#pret{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+#pret {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 40px;
     font-size: 26px;
 }
 
-#intro_txt, #engagement_txt{
-    font-family: "Calibri" ;
+#intro_txt,
+#engagement_txt {
+    font-family: "Calibri";
     margin-left: 40px;
     text-align: justify;
     margin-right: 30px;
 }
 
 #intro_img {
-    max-width: 100%; /* La largeur de l'image ne dépassera pas la largeur du conteneur */
-    height: auto;    /* La hauteur s'ajustera automatiquement pour maintenir les proportions d'origine */
+    max-width: 100%;
+    height: auto;
     padding: 20px;
     width: 40%;
     object-fit: cover;
 }
 
-#engagement_titre{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+#engagement_titre {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 40px;
 }
 
-#intro_tot{
+#intro_tot {
     display: flex;
 }
 
-#engagements{
+#engagements {
     display: flex;
     margin-left: 40px;
 }
 
-#liste{
+#liste {
     flex: 1;
-    font-family: "Calibri" ;
+    font-family: "Calibri";
     margin-left: 0px;
     text-align: justify;
     margin-right: 30px;
@@ -279,19 +348,19 @@ input, button, textarea, select, ul, p{
     font-size: 18px;
 }
 
-#liste_img{
-    padding : 20px;
+#liste_img {
+    padding: 20px;
     object-fit: cover;
 
 }
 
 
-#txt_intro{
+#txt_intro {
     flex: 1;
 }
 
 
-.bandeau{
+.bandeau {
     text-align: center;
     background-color: black;
     padding-top: 5px;
@@ -301,33 +370,12 @@ input, button, textarea, select, ul, p{
 
 
 
-
-
-
-
-footer{
+footer {
     text-align: center;
     position: relative;
-    background-color:antiquewhite;
+    background-color: antiquewhite;
     margin-top: 10%;
     padding-bottom: 30px;
     padding-top: 10px;
 }
 
-
-
-
-/*WORSHOP*/
-
-
-.users{
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    padding-right: 20px;    
-}
-
-
-#btn_post, #btn_get{
-    cursor: pointer;
-}

@@ -1,6 +1,3 @@
-var select_fournisseur = document.getElementById("select_fournisseur");
-var autre_fournisseur = document.getElementById("nouv_fournisseur");
-
 var val_code_postal = document.getElementById("code_postal");
 var message_code_postal = document.getElementById("message_cp");
 
@@ -13,18 +10,6 @@ var message_tva = document.getElementById("verif_tva");
 var val_nom = document.getElementById("nom");
 
 var fleche_haut = document.getElementById("arrowTop");
-
-
-//Ajouter un input si on séléctionne un autre fournisseur
-select_fournisseur.addEventListener("change", function () {
-    if (select_fournisseur.value == "Autre") {
-        autre_fournisseur.style.display = "block";
-    }
-    else {
-        autre_fournisseur.style.display = "none";
-
-    }
-})
 
 
 //vérification CP
@@ -88,38 +73,46 @@ val_code_postal.addEventListener("input", async function () {
 
 
 
-
-
-// Récupération des éléments HTML
 const textareaAdresse = document.querySelector('.adresse_txta');
 const inputCodePostal = document.getElementById('code_postal');
 const selectVille = document.getElementById('select_ville');
 const buttonSearch = document.getElementById('search_button'); // Bouton de recherche
 
-// Initialisation de la carte Leaflet
 const map = L.map('map').setView([48.8566, 2.3522], 13); // Vue initiale sur Paris
 
-// Ajout des tuiles OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Fonction pour afficher l'adresse sur la carte
+
+
+function verifierChamps() {
+    const adresse = textareaAdresse.value.trim();
+
+    if (!adresse) {
+        buttonSearch.classList.add('disabled');
+    } else {
+        buttonSearch.classList.remove('disabled');
+    }
+}
+
+textareaAdresse.addEventListener('input', verifierChamps);
+inputCodePostal.addEventListener('input', verifierChamps);
+selectVille.addEventListener('change', verifierChamps);
+
+document.addEventListener('DOMContentLoaded', verifierChamps);
+
+
+let adresseValide = false;
+
 async function afficherAdresseSurCarte() {
     const adresse = textareaAdresse.value.trim();
     const codePostal = inputCodePostal.value.trim();
     const ville = selectVille.value.trim();
 
-    if (!adresse || !codePostal || !ville) {
-        alert('Veuillez remplir tous les champs (adresse, code postal et ville).');
-        return;
-    }
-
-    // Construction de l'adresse complète
     const adresseComplete = `${adresse}, ${codePostal}, ${ville}`;
 
-    // Utilisation de l'API Nominatim d'OpenStreetMap pour la géocodage
     const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(adresseComplete)}&format=json&addressdetails=1`;
 
     try {
@@ -131,6 +124,8 @@ async function afficherAdresseSurCarte() {
             return;
         }
 
+        adresseValide = true;
+
         const { lat, lon } = data[0];
 
         map.setView([lat, lon], 15);
@@ -138,11 +133,15 @@ async function afficherAdresseSurCarte() {
     } catch (error) {
         console.error('Erreur lors de la recherche de l’adresse :', error);
         alert('Une erreur est survenue lors de la recherche de l’adresse.');
+        adresseValide = false;
+
     }
 }
 
-buttonSearch.addEventListener('click', afficherAdresseSurCarte);
-
+buttonSearch.addEventListener('click', (event) => {
+    event.preventDefault();
+    afficherAdresseSurCarte();
+});
 
 //vérification num téléphone
 ex_reg_tel = /^\d{10}$/;
@@ -164,6 +163,20 @@ val_num_telephone.addEventListener("input", function () {
     }
     val_num_telephone.reportValidity();
 })
+
+
+//vérifier l'adresse avant l'envoi du formulaire
+const form = document.getElementById('form_commande');
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (!adresseValide) {
+        alert("Veuillez vérifier que l'adresse est correcte avant d'envoyer le formulaire.");
+        return;
+    }
+
+    form.submit();
+});
 
 
 

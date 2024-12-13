@@ -18,7 +18,6 @@
         <a href="index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
         <a href="index.html" class="header_buttons">Accueil</a>
         <a href="facture.html" class="header_buttons">Facturation</a>
-        <a href="workshop.html" class="header_buttons">Workshop</a>
 
         <a href="menu.html"><img src="../../assets/img_menu.png" id="menu_img" width="80px"> </a>
 
@@ -35,27 +34,13 @@
         <a class="lien" href="mailto:contact@lesmainspropres.fr" target="_blank">Nous contacter</a>
     </div>
     <div class="corps_formulaire">
-        <br>
-        <h3>Informations de facturation</h3>
-        <br>
-        <label class="titres" class="hors_fieldset">Fournisseur</label>
-
-        <form id="monFormulaire" action="result.html" method="post">
-
-            <select class="liste_deroulante hors_fieldset" id="select_fournisseur">
-                <option value="fournisseur1">Fournisseur 1</option>
-                <option value="fournisseur2">Fournisseur 2</option>
-                <option value="fournisseur3">Fournisseur 3</option>
-                <option value="Autre">Autre</option>
-            </select>
-
-            <input type="text" id="nouv_fournisseur" placeholder="Entrez un nouveau fournisseur" style="display: none;">
+        <form id="form_commande" action="result.html" method="post">
 
             <br>
+            <h3>Informations de facturation</h3>
             <br>
-            <div class="conteneur_fieldset">
-
-                <fieldset class="partie_entreprise">
+            <div id="conteneur_fieldset">
+                <fieldset id="partie_entreprise">
                     <legend>Dites-nous en plus</legend><br>
                     <label class="titres">Genre</label>
                     <br>
@@ -81,8 +66,8 @@
                     <br>
                     <br>
 
-                    <label class="titres">Téléphone</label><br>
-                    <input id="telephone" type="tel" name="tel" placeholder="Téléphone">
+                    <label class="titres">Téléphone*</label><br>
+                    <input id="telephone" type="tel" name="tel" placeholder="Téléphone" required>
                     <p class="messages_verif" id="verif_telephone" style="display: none;"></p>
                     <br>
                     <br>
@@ -91,67 +76,57 @@
                     <label id="obligatoire">*:Champs obligatoires</label><br><br>
                 </fieldset>
 
+                <div id="partie_droite">
+                    <fieldset>
+                        <legend>Adresse de livraison</legend>
 
-                <fieldset>
-                    <legend>Adresse de livraison</legend>
 
+                        <label class="titres">Adresse*</label><br>
+                        <textarea class="adresse_txta" placeholder="Adresse complète" rows="3" cols="40" required></textarea>
+                        <br>
+                        <br>
 
-                    <label class="titres">Adresse</label><br>
-                    <textarea class="adresse_txta" placeholder="Adresse complète" rows="3" cols="40"></textarea>
-                    <br>
-                    <br>
+                        <label class="titres">Code postal*</label><br>
+                        <input id="code_postal" type="number" name="CP" placeholder="CP" required>
+                        <p class="messages_verif" id="message_cp" style="display: none;"></p>
+                        <br>
+                        <br>
 
-                    <label class="titres">Code postal</label><br>
-                    <input id="code_postal" type="number" name="CP" placeholder="CP">
-                    <p class="messages_verif" id="message_cp" style="display: none;"></p>
-                    <br>
-                    <br>
+                        <label class="titres">Ville*</label><br>
+                        <select id="select_ville" required>
+                            <option disabled>Ville...</option>
+                        </select>
+                        <br>
+                        <br>
 
-                    <label class="titres">Ville</label><br>
-                    <select id="select_ville">
-                        <option disabled>Ville...</option>
-                    </select>
-                    <br>
-                    <br>
+                        <button id="search_button">Rechercher mon adresse</button>
 
-                    <button id="search_button">Rechercher mon adresse</button>
+                    </fieldset>
 
-                </fieldset>
-
-                <div id="map" style="height: 400px;"></div>
+                    <div id="map"></div>
+                </div>
             </div>
             <br>
             <br>
 
+            <div id="bouton_submit_reset">
+                <input id="envoi_btn" type="submit" value="Envoyer">
 
-
-
-
+                <a href="facture.html"><input type="reset" name="reset" id="reset_button" value="Réinitialiser"></a>
+            </div>
+        </form>
     </div>
-
-    <input id="hors_fieldset" class="envoi_btn" type="submit" value="ENVOYER">
-
-    <a href="facture.html"><input type="reset" name="reset" id="reset_button" value="Réinitialiser"></a>
-    </form>
-
-    <br>
-
-    <br>
-    <br>
 
     <h3 id="faq">Questions fréquentes</h3>
 
     <ul class="questions_freq">
-        <p class="quest">Mon fournisseur n'apparait pas dans la liste, que faire ?</p>
-        <p>Séléctionnez "Autres" dans la liste puis indiquer votre fournisseur dans le champ "Commentaires"</p>
-        <br> <br>
         <p class="quest">Quel est le délai de réponse ?</p>
         <p>Nos équipes traitement votre demande au plus vite. Vous obtiendrez généralement une réponse sous 48
             heures</p>
         <br> <br>
         <p class="quest">Comment nous contacter ?</p>
-        <p>Vous pouvez utiliser notre <a href="#">formulaire de contact</a> ou nous contacter par mail à <a
-                href="mailto:contact@lesmainspropres.fr" target="_blank">contact@lesmainspropres.fr</a></p>
+        <p>Vous pouvez nous contacter par mail à <a href="mailto:contact@lesmainspropres.fr"
+                target="_blank">contact@lesmainspropres.fr</a></p>
         <br> <br>
     </ul>
 
