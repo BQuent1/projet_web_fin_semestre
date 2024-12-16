@@ -58,7 +58,7 @@ fieldset {
 
 
 #search_button {
-    background-color: coral;
+    background-color: #4CAF50;
     color: white;
     border: none;
     padding: 10px 10px;
@@ -98,7 +98,7 @@ textarea,
 select,
 ul,
 p {
-    font-family: "century gothic";
+    font-family: 'Trebuchet MS';
     margin-left: 10px;
     margin-top: 5px;
     border-radius: 5px;
@@ -116,7 +116,7 @@ h2, h3{
 
 .titres {
     font-weight: bold;
-    color: coral;
+    color: #4CAF50;
     font-family: "Trebuchet MS";
     margin-left: 10px;
 }
@@ -152,8 +152,8 @@ h2, h3{
     cursor: pointer;
     padding: 10px 10px;
     font-family: "Trebuchet MS";
-    font-size: 14px;
-    background-color: coral;
+    font-size: 1em;
+    background-color: #4CAF50;
     color: #ffff;
     border-radius: 5px;
     font-weight: bold;
@@ -162,22 +162,23 @@ h2, h3{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.218);
     margin-left: 0;
     margin-top: 0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
 
 }
 
-#reset_button {
-    padding: 10px 10px;
-    font-family: "Trebuchet MS";
-    font-weight: lighter;
-    color: black;
-    background-color: #ffff;
-    border: solid black 1px;
-    text-transform: uppercase;
-    font-weight: 100;
-    cursor: pointer;
-    margin-left: 1em;
-    margin-top: 0;
+#envoi_btn:hover {
+    background-color: #45a049; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
+
+#envoi_btn:active {
+    background-color: #3e8e41;
+    transform: translateY(0); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
 
 .questions_freq,
 #faq {

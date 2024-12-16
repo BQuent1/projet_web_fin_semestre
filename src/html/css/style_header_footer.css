@@ -12,12 +12,12 @@ html {
 #arrowTop {
     height: 9px;
     width: 14px;
-    color: coral;
+    color: black;
     position: fixed;
     bottom: 5em;
     right: 5em;
     cursor: pointer;
-    z-index: 1;
+    z-index: 96;
 }
 
 #arrowTop::before {
@@ -38,7 +38,7 @@ html {
     font-family: "Calibri";
     text-align: center;
     position: relative;
-    background-image: linear-gradient(to right, antiquewhite, white);
+    background-image: linear-gradient(to right, #4CAF50, white);
     background-size: 100% 2.5px;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -51,7 +51,7 @@ html {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: color(antiquewhite);
+    background: color(#4CAF50);
     background-size: 200% 100%;
     transition: background-position 0.5s ease;
     border-bottom: 0;
@@ -60,7 +60,7 @@ html {
 .header_buttons:hover::after {
     border-bottom: 0;
     height: 2.5px;
-    background: linear-gradient(to right, antiquewhite, white);
+    background: linear-gradient(to right, #4CAF50, white);
     background-size: 200% 100%;
     background-position: -100% 0;
 }
@@ -69,7 +69,7 @@ html {
 footer {
     text-align: center;
     position: relative;
-    background-color: antiquewhite;
+    background-color: #4CAF50;
     margin-top: 10%;
     padding-bottom: 30px;
     padding-top: 10px;
