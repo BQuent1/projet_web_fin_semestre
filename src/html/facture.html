@@ -19,13 +19,13 @@
         <a href="./produit.html" class="header_buttons">Notre produit</a>
         <a href="./facture.html" class="header_buttons">Commander</a>
 
-    </header> 
+    </header>
 
     <br><br>
     <div id="arrowTop" hidden></div>
 
-    <h2 id="titre_facture">Module de facturation</h2>
-    <p>Cette page vous permet de nous soumettre vos informations de facturation</p>
+    <h2 id="titre_facture">Module de commande</h2>
+    <p>Cette page vous permet de nous soumettre vos informations de commande</p>
     <div class="bandeau">
         <a class="lien" href="#">Informations</a>
         <a class="lien" href="#faq">FAQ</a>
@@ -35,43 +35,54 @@
         <form id="form_commande" action="result.html" method="get">
 
             <br>
-            <h3>Informations de facturation</h3>
+            <h3>Informations de commande</h3>
             <br>
             <div id="conteneur_fieldset">
-                <fieldset id="partie_entreprise">
-                    <legend>Dites-nous en plus</legend><br>
-                    <label class="titres">Genre</label>
-                    <br>
-                    <label class="option_radio"><input id="radio" type="radio" name="genre" value="femme"> Femme</label>
-                    <label class="option_radio"><input id="radio" type="radio" name="genre" value="homme"> Homme</label>
-                    <label class="option_radio"><input id="radio" type="radio" name="genre" value="non spe"> Non
-                        spécifié</label>
-                    <br>
-                    <br>
+                <div id="partie_gauche">
+                    <fieldset id="quantite_fieldset">
+                        <legend>Quantité de savon</legend>
+                        <label class="titres">Nombre de savons à commander*</label><br>
+                        <input type="number" id="quantite" name="quantite" min="1" max="100" placeholder="Ex : 1"
+                            required>
+                    </fieldset>
 
-                    <label class="titres">Nom*</label><br>
-                    <input id="nom" type="text" id="nom" name="nom" placeholder="Nom de famille" required>
-                    <br>
-                    <br>
+                    <fieldset id="partie_entreprise">
+                        <legend>Dites-nous en plus</legend><br>
+                        <label class="titres">Genre</label>
+                        <br>
+                        <label class="option_radio"><input id="radio" type="radio" name="genre" value="Femme">
+                            Femme</label>
+                        <label class="option_radio"><input id="radio" type="radio" name="genre" value="Fomme">
+                            Homme</label>
+                        <label class="option_radio"><input id="radio" type="radio" name="genre" value="Non spécifié"> Non
+                            spécifié</label>
+                        <br>
+                        <br>
 
-                    <label class="titres">Prenom*</label><br>
-                    <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-                    <br>
-                    <br>
+                        <label class="titres">Nom*</label><br>
+                        <input id="nom" type="text" id="nom" name="nom" placeholder="Nom de famille" required>
+                        <br>
+                        <br>
 
-                    <label class="titres">E-mail*</label><br>
-                    <input type="email" id="email" name="email" placeholder="E-mail" required>
-                    <br>
-                    <br>
+                        <label class="titres">Prenom*</label><br>
+                        <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+                        <br>
+                        <br>
 
-                    <label class="titres">Téléphone*</label><br>
-                    <input id="telephone" type="tel" name="tel" placeholder="Téléphone" required>
-                    <p class="messages_verif" id="verif_telephone" style="display: none;"></p>
-                    <br>
-                    <br>
+                        <label class="titres">E-mail*</label><br>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required>
+                        <br>
+                        <br>
 
-                    <label id="obligatoire">*:Champs obligatoires</label><br><br>
-                </fieldset>
+                        <label class="titres">Téléphone*</label><br>
+                        <input id="telephone" type="tel" name="tel" placeholder="Téléphone" required>
+                        <p class="messages_verif" id="verif_telephone" style="display: none;"></p>
+                        <br>
+                        <br>
+
+                        <label id="obligatoire">*:Champs obligatoires</label><br><br>
+                    </fieldset>
+                </div>
 
                 <div id="partie_droite">
                     <fieldset>
@@ -79,7 +90,8 @@
 
 
                         <label class="titres">Adresse*</label><br>
-                        <textarea class="adresse_txta" name="adresse" placeholder="Adresse complète" rows="3" cols="40" required></textarea>
+                        <textarea class="adresse_txta" name="adresse" placeholder="Adresse complète" rows="3" cols="40"
+                            required></textarea>
                         <br>
                         <br>
 

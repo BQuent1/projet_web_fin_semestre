@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,29 @@
     <link rel="stylesheet" href="./css/style_header_footer.css">
 
 </head>
+
 <body>
     <header>
         <a href="./index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
         <a href="./produit.html" class="header_buttons">Notre produit</a>
-        <a href="./commande.html" class="header_buttons">Commander</a>
-    </header> 
+        <a href="./facture.html" class="header_buttons">Commander</a>
+    </header>
 
     <main class="container">
+        <div class="validation-banner">
+            <div class="banner-content">
+
+                <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#494c4e"
+                        d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2m0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z" />
+                    <path fill="#494c4e"
+                        d="M10.5 16.5c-.42 0-.82-.176-1.094-.484l-2.963-2.97c-.274-.26-.443-.653-.443-1.06 0-.405.17-.798.462-1.078.482-.513 1.557-.55 2.113.037l1.925 1.93 4.943-4.958c.52-.55 1.575-.57 2.132.02.256.242.425.634.425 1.04 0 .402-.164.79-.45 1.068l-5.993 6.012c-.238.267-.637.443-1.057.443z" />
+                </svg>
+                <p>Merci pour votre achat et votre contribution à une hygiène plus saine !</p>
+            </div>
+        </div>
+
         <section class="order-summary">
             <h2>Récapitulatif de votre commande</h2>
             <div class="summary-details">
@@ -32,7 +48,7 @@
                 <p><strong>Ville :</strong> <span id="recap_ville"></span></p>
                 <br>
                 <h3>Produit commandé</h3>
-                <p><strong>Savon solide naturel</strong> - Quantité : 1</p>
+                <p><strong>Savon solide naturel</strong> - Quantité : <span id="recap_quantite"></span></p>
                 <br>
                 <button onclick="window.print()">Imprimer le récapitulatif</button>
                 <br>

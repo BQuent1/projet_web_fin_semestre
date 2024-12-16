@@ -12,6 +12,32 @@ body {
     padding: 2rem 0;
 }
 
+.validation-banner {
+    background-color: #e8f5e9; /* Vert clair pour valider */
+    color: #256029; /* Vert foncé pour le texte */
+    padding: 1em 2em;
+    border-bottom: 2px solid #c8e6c9; /* Ligne verte en bas */
+    text-align: center;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.validation-banner p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
 .order-summary {
     background-color: #fff;
     padding: 2rem;

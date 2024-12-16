@@ -1,3 +1,5 @@
+
+
 .messages_verif {
     font-family: "century gothic";
     font-size: 12px;
@@ -8,6 +10,17 @@
 .corps_formulaire {
     background-color: #f3f3f3;
     overflow: auto;
+}
+
+#quantite_fieldset {
+    margin-bottom: 2em;
+}
+
+#quantite {
+    width: 50px; /* Ajustez la taille pour les nombres */
+    text-align: center;
+    border: 1px solid lightgrey;
+    padding: 5px;
 }
 
 #conteneur_fieldset {
@@ -92,6 +105,13 @@ p {
     border-style: none;
     padding: 3px;
     resize: none;
+}
+
+h2, h3{
+    font-family: "century gothic";
+    font-weight: bold;
+    color: black;
+    margin-left: 2em;
 }
 
 .titres {
