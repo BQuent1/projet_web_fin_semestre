@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <title>Les Mains Propres</title>
     <link rel="icon" href="../../assets/icon.png" type="image/png">
-    <link href="./css/feuille_style.css" type="text/css" rel="stylesheet" />
+    <link href="./css/style_facture.css" type="text/css" rel="stylesheet" />
+    <link href="./css/style_header_footer.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 
@@ -13,15 +14,12 @@
 
 <body>
 
+    <header>
+        <a href="./index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
+        <a href="./produit.html" class="header_buttons">Notre produit</a>
+        <a href="./facture.html" class="header_buttons">Commander</a>
 
-    <header id="leHaut">
-        <a href="index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
-        <a href="index.html" class="header_buttons">Accueil</a>
-        <a href="facture.html" class="header_buttons">Facturation</a>
-
-        <a href="menu.html"><img src="../../assets/img_menu.png" id="menu_img" width="80px"> </a>
-
-    </header>
+    </header> 
 
     <br><br>
     <div id="arrowTop" hidden></div>
@@ -34,7 +32,7 @@
         <a class="lien" href="mailto:contact@lesmainspropres.fr" target="_blank">Nous contacter</a>
     </div>
     <div class="corps_formulaire">
-        <form id="form_commande" action="result.html" method="post">
+        <form id="form_commande" action="result.html" method="get">
 
             <br>
             <h3>Informations de facturation</h3>
@@ -57,12 +55,12 @@
                     <br>
 
                     <label class="titres">Prenom*</label><br>
-                    <input type="text" id="prenom" placeholder="Prénom" required>
+                    <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
                     <br>
                     <br>
 
                     <label class="titres">E-mail*</label><br>
-                    <input type="email" id="email" placeholder="E-mail" required>
+                    <input type="email" id="email" name="email" placeholder="E-mail" required>
                     <br>
                     <br>
 
@@ -71,7 +69,6 @@
                     <p class="messages_verif" id="verif_telephone" style="display: none;"></p>
                     <br>
                     <br>
-
 
                     <label id="obligatoire">*:Champs obligatoires</label><br><br>
                 </fieldset>
@@ -82,7 +79,7 @@
 
 
                         <label class="titres">Adresse*</label><br>
-                        <textarea class="adresse_txta" placeholder="Adresse complète" rows="3" cols="40" required></textarea>
+                        <textarea class="adresse_txta" name="adresse" placeholder="Adresse complète" rows="3" cols="40" required></textarea>
                         <br>
                         <br>
 
@@ -93,7 +90,7 @@
                         <br>
 
                         <label class="titres">Ville*</label><br>
-                        <select id="select_ville" required>
+                        <select id="select_ville" name="ville" required>
                             <option disabled>Ville...</option>
                         </select>
                         <br>

@@ -1,26 +1,54 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Les Mains Propres</title>
-    <link rel="icon" href="icon.png" type="image/png">
-    <link href="feuille_style.css" type="text/css" rel="stylesheet" />
-    <link href="script.js" type="script"/>
-</head>   
-  <body>
-    <header>
-        <a href="formulaire.html"><img id="logo" src="logo.png" width="120px" alt="logo"></a>
-        <a href="formulaire.html" class="header_buttons">Accueil</a>
-        <a href="facture.html" class="header_buttons">A propos</a>
-        <a href="facture.html" class="header_buttons">Inscription</a>
-        <a href="facture.html" class="header_buttons">Connexion</a>
-        <a href="facture.html" class="header_buttons">Avis</a>
-        <a href="facture.html" class="header_buttons">Contact</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récapitulatif de la commande - Les Mains Propres</title>
+    <link rel="stylesheet" href="./css/style_result.css">
+    <link rel="stylesheet" href="./css/style_header_footer.css">
 
+</head>
+<body>
+    <header>
+        <a href="./index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
+        <a href="./produit.html" class="header_buttons">Notre produit</a>
+        <a href="./commande.html" class="header_buttons">Commander</a>
     </header> 
 
-    <p>Merci pour vos renseignements, votre demande de facture a été prise en compte</p>
+    <main class="container">
+        <section class="order-summary">
+            <h2>Récapitulatif de votre commande</h2>
+            <div class="summary-details">
+                <h3>Informations personnelles</h3>
+                <p><strong>Genre :</strong> <span id="recap_genre"></span></p>
+                <p><strong>Nom :</strong> <span id="recap_nom"></span></p>
+                <p><strong>Prénom :</strong> <span id="recap_prenom"></span></p>
+                <p><strong>Email :</strong> <span id="recap_email"></span></p>
+                <p><strong>Téléphone :</strong> <span id="recap_telephone"></span></p>
+                <br>
+                <h3>Adresse de livraison</h3>
+                <p><strong>Adresse :</strong> <span id="recap_adresse"></span></p>
+                <p><strong>Code postal :</strong> <span id="recap_cp"></span></p>
+                <p><strong>Ville :</strong> <span id="recap_ville"></span></p>
+                <br>
+                <h3>Produit commandé</h3>
+                <p><strong>Savon solide naturel</strong> - Quantité : 1</p>
+                <br>
+                <button onclick="window.print()">Imprimer le récapitulatif</button>
+                <br>
+                <br>
+            </div>
+        </section>
+    </main>
 
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Les Mains Propres. Tous droits réservés.</p>
+        </div>
+    </footer>
 
+    </script>
 </body>
+<script src="js/script_result.js"></script>
+
 </html>

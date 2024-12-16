@@ -1,0 +1,136 @@
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.header h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.menu li {
+    margin: 0 1rem;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a.active {
+    text-decoration: underline;
+}
+
+/* Section de présentation du produit */
+.product-presentation {
+    margin: 2rem 0;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-presentation h2 {
+    text-align: left;
+    color: #4CAF50;
+}
+
+.product-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-description {
+    flex: 1;
+}
+
+.product-description p {
+    margin-bottom: 1rem;
+}
+
+.product-description ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.product-description li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+#bouton_commander {
+    display: inline-block;
+    background-color: #4CAF50; 
+    color: #fff; 
+    font-weight: bold;
+    padding: 0.8rem 1.5rem; 
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#bouton_commander:hover {
+    background-color: #45a049; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+a#bouton_commander:active {
+    background-color: #3e8e41;
+    transform: translateY(0); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+
+.footer {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer p {
+    margin: 0;
+}

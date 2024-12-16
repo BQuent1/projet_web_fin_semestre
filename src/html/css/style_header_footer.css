@@ -1,0 +1,76 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+#logo {
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+#arrowTop {
+    height: 9px;
+    width: 14px;
+    color: coral;
+    position: fixed;
+    bottom: 5em;
+    right: 5em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#arrowTop::before {
+    content: '▲';
+}
+
+.header_buttons {
+    padding: 3%;
+    padding-left: 6%;
+    padding-right: 5%;
+    border-radius: none;
+    position: relative;
+    top: -50px;
+    border: none;
+    margin-top: auto;
+    text-decoration: none;
+    color: black;
+    font-family: "Calibri";
+    text-align: center;
+    position: relative;
+    background-image: linear-gradient(to right, antiquewhite, white);
+    background-size: 100% 2.5px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.header_buttons::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: color(antiquewhite);
+    background-size: 200% 100%;
+    transition: background-position 0.5s ease;
+    border-bottom: 0;
+}
+
+.header_buttons:hover::after {
+    border-bottom: 0;
+    height: 2.5px;
+    background: linear-gradient(to right, antiquewhite, white);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+}
+
+
+footer {
+    text-align: center;
+    position: relative;
+    background-color: antiquewhite;
+    margin-top: 10%;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}

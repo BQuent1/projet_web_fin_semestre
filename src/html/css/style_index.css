@@ -1,0 +1,112 @@
+#menu_img {
+    display: none;
+}
+
+
+@media (max-width: 1300px) {
+    #menu_img {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-right: 40px;
+        margin-top: 50px;
+    }
+
+    .header_buttons {
+        display: none;
+    }
+}
+
+
+
+.bienvenu_txt {
+    font-family: 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+    /* Cache le texte dépassant de la zone de texte */
+    white-space: nowrap;
+    /* Évite le saut de ligne */
+    animation: typeWriter 5s steps(50) forwards;
+    margin-left: 40px;
+}
+
+h2,
+h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 40px;
+
+}
+
+
+
+@keyframes typeWriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+#pret {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 40px;
+    font-size: 26px;
+}
+
+#intro_txt,
+#engagement_txt {
+    font-family: "Calibri";
+    margin-left: 40px;
+    text-align: justify;
+    margin-right: 30px;
+}
+
+#intro_img {
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    width: 40%;
+    object-fit: cover;
+}
+
+#engagement_titre {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 40px;
+}
+
+#intro_tot {
+    display: flex;
+}
+
+#engagements {
+    display: flex;
+    margin-left: 40px;
+}
+
+#liste {
+    flex: 1;
+    font-family: "Calibri";
+    margin-left: 0px;
+    text-align: justify;
+    margin-right: 30px;
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+#liste_img {
+    padding: 20px;
+    object-fit: cover;
+
+}
+
+#txt_intro {
+    flex: 1;
+}
+
+
+
+
+
