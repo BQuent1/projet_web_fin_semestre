@@ -1,26 +1,26 @@
-var val_code_postal = document.getElementById("code_postal");
-var message_code_postal = document.getElementById("message_cp");
+let val_code_postal = document.getElementById("code_postal");
+let message_code_postal = document.getElementById("message_cp");
 
-var val_num_telephone = document.getElementById("telephone");
-var message_num_telephone = document.getElementById("verif_telephone");
+let val_num_telephone = document.getElementById("telephone");
+let message_num_telephone = document.getElementById("verif_telephone");
 
-var val_tva = document.getElementById("tva");
-var message_tva = document.getElementById("verif_tva");
+let val_tva = document.getElementById("tva");
+let message_tva = document.getElementById("verif_tva");
 
-var val_nom = document.getElementById("nom");
+let val_nom = document.getElementById("nom");
 
-var fleche_haut = document.getElementById("arrowTop");
+let fleche_haut = document.getElementById("arrowTop");
 
 
 //vérification CP
 ex_reg_cp = /^\d{5}$/;
-var select_ville = document.getElementById("select_ville");
+let select_ville = document.getElementById("select_ville");
 val_code_postal.addEventListener("input", async function () {
     if (val_code_postal.value === "") {
         message_code_postal.style.display = "none";
         val_code_postal.setCustomValidity("");
 
-        var premierEnfant = select_ville.firstElementChild;
+        let premierEnfant = select_ville.firstElementChild;
 
         while (select_ville.childNodes.length > 1) {
             select_ville.removeChild(select_ville.lastChild);
@@ -36,16 +36,16 @@ val_code_postal.addEventListener("input", async function () {
         message_code_postal.style.color = "green";
         val_code_postal.setCustomValidity("");
 
-        var data_cp = val_code_postal.value;
-        var fetchResult = await fetch('https://apicarto.ign.fr/api/codes-postaux/communes/' + data_cp);
+        let data_cp = val_code_postal.value;
+        let fetchResult = await fetch('https://apicarto.ign.fr/api/codes-postaux/communes/' + data_cp);
 
-        var data = await fetchResult.json();
-        var nbr_commune = data.length;
+        let data = await fetchResult.json();
+        let nbr_commune = data.length;
 
         //console.log(data);
 
         for (let i = 0; i < nbr_commune; i++) {
-            var opt = document.createElement("option");
+            let opt = document.createElement("option");
             opt.value = data[i]["nomCommune"];
             opt.innerHTML = data[i]["nomCommune"];
             select_ville.add(opt);
@@ -58,7 +58,7 @@ val_code_postal.addEventListener("input", async function () {
         message_code_postal.style.display = "none";
         val_code_postal.setCustomValidity("Le numéro doit contenir 5 chiffres");
 
-        var premierEnfant = select_ville.firstElementChild;
+        let premierEnfant = select_ville.firstElementChild;
 
         while (select_ville.childNodes.length > 1) {
             select_ville.removeChild(select_ville.lastChild);
