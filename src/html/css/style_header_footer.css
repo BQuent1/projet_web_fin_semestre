@@ -2,6 +2,12 @@ html {
     scroll-behavior: smooth;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
 #arrowTop {
     height: 9px;
     width: 14px;
@@ -16,52 +22,6 @@ html {
 #arrowTop::before {
     content: '▲';
 }
-
-/* #logo {
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-.header_buttons {
-    padding: 3%;
-    padding-left: 6%;
-    padding-right: 5%;
-    border-radius: none;
-    position: relative;
-    top: -50px;
-    border: none;
-    margin-top: auto;
-    text-decoration: none;
-    color: black;
-    font-family: "Calibri";
-    text-align: center;
-    position: relative;
-    background-image: linear-gradient(to right, #4CAF50, white);
-    background-size: 100% 2.5px;
-    background-position: bottom;
-    background-repeat: no-repeat;
-}
-
-.header_buttons::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: color(#4CAF50);
-    background-size: 200% 100%;
-    transition: background-position 0.5s ease;
-    border-bottom: 0;
-}
-
-.header_buttons:hover::after {
-    border-bottom: 0;
-    height: 2.5px;
-    background: linear-gradient(to right, #4CAF50, white);
-    background-size: 200% 100%;
-    background-position: -100% 0;
-} */
 
 header{
     display: flex;
@@ -197,4 +157,11 @@ footer {
     #burger-menu.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+
+    #arrowTop {
+        display: none;
+    }
+
+
 }

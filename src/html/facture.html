@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 
+    <!-- police texte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -18,19 +26,18 @@
     <header>
         <a href="./index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
         <nav>
-          <ul id="menu">
-            <li><a href="./produit.html" class="header_buttons">Notre produit</a></li>
-            <li><a href="./facture.html" class="header_buttons">Commander</a></li>
-          </ul>
-          <button id="burger-menu" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+            <ul id="menu">
+                <li><a href="./produit.html" class="header_buttons">Notre produit</a></li>
+                <li><a href="./facture.html" class="header_buttons">Commander</a></li>
+            </ul>
+            <button id="burger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
-      </header>
+    </header>
 
-    <br><br>
     <div id="arrowTop" hidden></div>
 
     <h2 id="titre_facture">Module de commande</h2>
@@ -43,53 +50,42 @@
     <div class="corps_formulaire">
         <form id="form_commande" action="result.html" method="get">
 
-            <br>
             <h3>Informations de commande</h3>
-            <br>
             <div id="conteneur_fieldset">
                 <div id="partie_gauche">
                     <fieldset id="quantite_fieldset">
                         <legend>Quantité</legend>
-                        <label class="titres">Nombre de savons à commander*</label><br>
+                        <label class="titres">Nombre de savons à commander*</label>
                         <input type="number" id="quantite" name="quantite" min="1" max="100" placeholder="Ex : 1"
                             required>
                     </fieldset>
 
                     <fieldset id="partie_entreprise">
-                        <legend>Dites-nous en plus</legend><br>
+                        <legend>Dites-nous en plus</legend>
                         <label class="titres">Genre</label>
-                        <br>
                         <label class="option_radio"><input id="radio" type="radio" name="genre" value="Femme">
                             Femme</label>
                         <label class="option_radio"><input id="radio" type="radio" name="genre" value="Fomme">
                             Homme</label>
-                        <label class="option_radio"><input id="radio" type="radio" name="genre" value="Non spécifié"> Non
+                        <label class="option_radio"><input id="radio" type="radio" name="genre" value="Non spécifié">
+                            Non
                             spécifié</label>
-                        <br>
-                        <br>
 
-                        <label class="titres">Nom*</label><br>
+
+                        <label class="titres">Nom*</label>
                         <input id="nom" type="text" id="nom" name="nom" placeholder="Nom de famille" required>
-                        <br>
-                        <br>
 
-                        <label class="titres">Prenom*</label><br>
+                        <label class="titres">Prenom*</label>
                         <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-                        <br>
-                        <br>
 
-                        <label class="titres">E-mail*</label><br>
+                        <label class="titres">E-mail*</label>
                         <input type="email" id="email" name="email" placeholder="E-mail" required>
-                        <br>
-                        <br>
 
-                        <label class="titres">Téléphone*</label><br>
+                        <label class="titres">Téléphone*</label>
                         <input id="telephone" type="tel" name="tel" placeholder="Téléphone" required>
                         <p class="messages_verif" id="verif_telephone" style="display: none;"></p>
-                        <br>
-                        <br>
 
-                        <label id="obligatoire">*:Champs obligatoires</label><br><br>
+                        <label id="obligatoire">*:Champs obligatoires</label>
                     </fieldset>
                 </div>
 
@@ -98,24 +94,18 @@
                         <legend>Adresse de livraison</legend>
 
 
-                        <label class="titres">Adresse*</label><br>
+                        <label class="titres">Adresse*</label>
                         <textarea class="adresse_txta" name="adresse" placeholder="Adresse complète" rows="3" cols="40"
                             required></textarea>
-                        <br>
-                        <br>
 
-                        <label class="titres">Code postal*</label><br>
+                        <label class="titres">Code postal*</label>
                         <input id="code_postal" type="number" name="CP" placeholder="CP" required>
                         <p class="messages_verif" id="message_cp" style="display: none;"></p>
-                        <br>
-                        <br>
 
-                        <label class="titres">Ville*</label><br>
+                        <label class="titres">Ville*</label>
                         <select id="select_ville" name="ville" required>
                             <option disabled>Ville...</option>
                         </select>
-                        <br>
-                        <br>
 
                         <button id="search_button">Rechercher mon adresse</button>
 
@@ -124,8 +114,6 @@
                     <div id="map"></div>
                 </div>
             </div>
-            <br>
-            <br>
 
             <div id="bouton_submit_reset">
                 <input id="envoi_btn" type="submit" value="Je commande !">
@@ -135,15 +123,13 @@
 
     <h3 id="faq">Questions fréquentes</h3>
 
-    <ul class="questions_freq">
+    <ul id="questions_freq">
         <p class="quest">Quel est le délai de réponse ?</p>
-        <p>Nos équipes traitement votre demande au plus vite. Vous obtiendrez généralement une réponse sous 48
+        <p class="reponse">Nos équipes traitement votre demande au plus vite. Vous obtiendrez généralement une réponse sous 48
             heures</p>
-        <br> <br>
         <p class="quest">Comment nous contacter ?</p>
-        <p>Vous pouvez nous contacter par mail à <a href="mailto:contact@lesmainspropres.fr"
+        <p class="reponse">Vous pouvez nous contacter par mail à <a href="mailto:contact@lesmainspropres.fr"
                 target="_blank">contact@lesmainspropres.fr</a></p>
-        <br> <br>
     </ul>
 
     </div>

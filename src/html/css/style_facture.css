@@ -50,10 +50,16 @@ fieldset {
     width: 100%; 
     box-sizing: border-box; 
     font-family: 'Trebuchet MS';
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f3f3f3;
 }
 
 #map {
     height: 30em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 
@@ -77,7 +83,7 @@ fieldset {
     pointer-events: none;
 }
 
-button:hover {
+button:hover(:not(#burger-menu)) {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
@@ -115,11 +121,14 @@ h2, h3{
 }
 
 .titres {
+    display: block;
     font-weight: bold;
     color: #4CAF50;
     font-family: "Trebuchet MS";
     margin-left: 10px;
+    margin-top: 1.5em;
 }
+
 
 ::placeholder {
     color: lightgrey;
@@ -139,14 +148,15 @@ h2, h3{
 }
 
 #obligatoire {
+    display: block;
     font-style: italic;
     color: black;
     font-size: 12px;
     font-weight: 100;
     margin-left: 10px;
+    margin-top: 2em;
     font-family: 'Trebuchet MS';
 }
-
 
 #envoi_btn {
     cursor: pointer;
@@ -161,9 +171,8 @@ h2, h3{
     text-transform: uppercase;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.218);
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 2em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-
 
 }
 
@@ -180,14 +189,19 @@ h2, h3{
 }
 
 
-.questions_freq,
+#questions_freq,
 #faq {
-    margin-left: 40px;
+    margin-left: 2em;
+}
 
+.reponse{
+    font-family: 'Roboto';
 }
 
 .quest {
-    font-weight: bold;
+    font-weight: bold;  
+    text-decoration: underline #45a049;
+    text-underline-offset: 0.2em;
 }
 
 .bandeau {
@@ -196,4 +210,23 @@ h2, h3{
     padding-top: 5px;
     padding-bottom: 5px;
     font-family: "Trebuchet MS";
+}
+
+
+
+@media (max-width: 750px) {
+    #conteneur_fieldset{
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    #questions_freq{
+        width: 90%;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
 }

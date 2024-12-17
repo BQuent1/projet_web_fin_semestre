@@ -89,13 +89,14 @@ const inputCodePostal = document.getElementById('code_postal');
 const selectVille = document.getElementById('select_ville');
 const buttonSearch = document.getElementById('search_button'); // Bouton de recherche
 
-const map = L.map('map').setView([48.8566, 2.3522], 13); // Vue initiale sur Paris
+const map = L.map('map').setView([46.603354, 1.888334], 5); // Vue initiale sur Paris
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+map.scrollWheelZoom.disable();
 
 
 function verifierChamps() {
