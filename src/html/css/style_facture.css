@@ -73,6 +73,7 @@ fieldset {
     margin-left: 10px;
     text-align: center;
     margin-bottom: 1.2em;
+    margin-top: 1.5em;
     border-radius: 5px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -147,7 +148,7 @@ h2, h3{
     text-decoration: none;
 }
 
-#obligatoire {
+.italique {
     display: block;
     font-style: italic;
     color: black;
@@ -189,6 +190,11 @@ h2, h3{
 }
 
 
+#partie_questions{
+    margin-top: 4em;
+}
+
+
 #questions_freq,
 #faq {
     margin-left: 2em;
@@ -214,7 +220,7 @@ h2, h3{
 
 
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
     #conteneur_fieldset{
         flex-direction: column;
         margin-left: auto;

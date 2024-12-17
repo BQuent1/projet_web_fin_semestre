@@ -93,8 +93,15 @@ a {
     text-decoration: none;
 }
 
+
+button-container{
+    align-items: center;
+}
+
+
 #bouton_commander {
-    display: inline-block;
+    margin-top: 2em;
+    display: block;
     background-color: #4CAF50; 
     color: #fff; 
     font-weight: bold;

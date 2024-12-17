@@ -116,6 +116,18 @@ selectVille.addEventListener('change', verifierChamps);
 document.addEventListener('DOMContentLoaded', verifierChamps);
 
 
+
+function verifPrix(){
+    const prix = 12.99;
+    const txt_prix = document.getElementById('prix');
+    const quantite = document.getElementById('quantite').value;
+
+    txt_prix.innerText = "Prix total : " + quantite * prix + "€";
+}
+
+
+document.getElementById('quantite').addEventListener('change', verifPrix);
+
 let adresseValide = false;
 
 async function afficherAdresseSurCarte() {

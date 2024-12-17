@@ -41,7 +41,8 @@
     <div id="arrowTop" hidden></div>
 
     <h2 id="titre_facture">Module de commande</h2>
-    <p>Cette page vous permet de nous soumettre vos informations de commande</p>
+    <p>Cette page vous permet de nous soumettre vos informations de commande d'échantillons de savons gratuits Les Mains
+        Propres.</p>
     <div class="bandeau">
         <a class="lien" href="#">Informations</a>
         <a class="lien" href="#faq">FAQ</a>
@@ -56,8 +57,11 @@
                     <fieldset id="quantite_fieldset">
                         <legend>Quantité</legend>
                         <label class="titres">Nombre de savons à commander*</label>
-                        <input type="number" id="quantite" name="quantite" min="1" max="100" placeholder="Ex : 1"
+                        <input type="number" id="quantite" name="quantite" min="1" max="5" placeholder="Ex : 1"
                             required>
+
+                        <!-- <p id="prix">Prix total : 0.00€</p> -->
+                        <p class="italique">Livraison gratuite partout en france</p>
                     </fieldset>
 
                     <fieldset id="partie_entreprise">
@@ -85,7 +89,7 @@
                         <input id="telephone" type="tel" name="tel" placeholder="Téléphone" required>
                         <p class="messages_verif" id="verif_telephone" style="display: none;"></p>
 
-                        <label id="obligatoire">*:Champs obligatoires</label>
+                        <label class="italique">*:Champs obligatoires</label>
                     </fieldset>
                 </div>
 
@@ -107,7 +111,7 @@
                             <option disabled>Ville...</option>
                         </select>
 
-                        <button id="search_button">Rechercher mon adresse</button>
+                        <br><button id="search_button">Valider mon adresse</button>
 
                     </fieldset>
 
@@ -121,16 +125,19 @@
         </form>
     </div>
 
-    <h3 id="faq">Questions fréquentes</h3>
 
-    <ul id="questions_freq">
-        <p class="quest">Quel est le délai de réponse ?</p>
-        <p class="reponse">Nos équipes traitement votre demande au plus vite. Vous obtiendrez généralement une réponse sous 48
-            heures</p>
-        <p class="quest">Comment nous contacter ?</p>
-        <p class="reponse">Vous pouvez nous contacter par mail à <a href="mailto:contact@lesmainspropres.fr"
-                target="_blank">contact@lesmainspropres.fr</a></p>
-    </ul>
+    <div id="partie_questions">
+        <h3 id="faq">Questions fréquentes</h3>
+
+        <ul id="questions_freq">
+            <p class="quest">Quel est le délai de réponse ?</p>
+            <p class="reponse">Nos équipes traitement votre demande au plus vite. Vous obtiendrez généralement une
+                réponse sous 48
+                heures</p>
+            <p class="quest">Comment nous contacter ?</p>
+            <p class="reponse">Vous pouvez nous contacter par mail à <a href="mailto:contact@lesmainspropres.fr"
+                    target="_blank">contact@lesmainspropres.fr</a></p>
+        </ul>
 
     </div>
 
