@@ -11,6 +11,17 @@ let val_nom = document.getElementById("nom");
 
 let fleche_haut = document.getElementById("arrowTop");
 
+//script menu burger
+const burgerMenu = document.getElementById('burger-menu');
+const menu = document.querySelector('#menu');
+
+burgerMenu.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    burgerMenu.classList.toggle('active');
+});
+
+
+
 
 //vérification CP
 ex_reg_cp = /^\d{5}$/;

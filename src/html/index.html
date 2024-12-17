@@ -1,38 +1,67 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Les Mains Propres</title>
-    <link rel="icon" href="icon.png" type="image/png">
-    <link href="./css/style_index.css" type="text/css" rel="stylesheet" />
-    <link href="./css/style_header_footer.css" type="text/css" rel="stylesheet"/>
-    <script src="./js/script.js"></script>
-</head>   
-  <body>
-    <header>
-        <a href="./index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
-        <a href="./produit.html" class="header_buttons">Notre produit</a>
-        <a href="./facture.html" class="header_buttons">Commander</a>
-    </header> 
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Mains Propres</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link href="./css/style_index.css" type="text/css" rel="stylesheet" />
+  <link href="./css/style_header_footer.css" type="text/css" rel="stylesheet" />
+  <script src="./js/script.js"></script>
+
+  <!-- police texte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 
 
-    <br>
-    <br>
-    <br>
-    <div id="intro_tot">
-        <div id="txt_intro">
-            <h1 class="bienvenu_txt">Bienvenue chez Les Mains Propres !</h1>
-            <h1 id="pret">Prêt à sauver la planète ?</h1>
-            <p id="intro_txt">Chez Les Mains Propres, nous croyons que chaque geste compte pour une hygiène plus saine et respectueuse de l'environnement. Découvrez notre mission et nos engagements pour offrir des produits naturels, durables et respectueux de notre planète.</p>
-            <br>
-            <h2 id="engagement_titre">Les engagements de LMP</h2>
-            <p id="engagement_txt">Nous sommes dévoués à la préservation de notre environnement grâce à des produits éthiques et durables. Chez Les Mains Propres, chaque savon solide est fabriqué à partir d'ingrédients naturels soigneusement choisis, sans produits chimiques agressifs ni additifs artificiels. Nous vous proposons une alternative efficace pour un mode de vie plus sain et respectueux de l’écosystème. Notre objectif est de réduire l'impact écologique tout en offrant une expérience de soin de la peau unique et bénéfique.<p>
-        </div>
-    
-        <img id="intro_img" src="../../assets/photo_intro.jpg" alt="photo d'un savon entouré d'éléments naturels">
+</head>
+
+<body>
+  <header>
+    <a href="./index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
+    <nav>
+      <ul id="menu">
+        <li><a href="./produit.html" class="header_buttons">Notre produit</a></li>
+        <li><a href="./facture.html" class="header_buttons">Commander</a></li>
+      </ul>
+      <button id="burger-menu" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+  
+
+  <div id="intro_tot">
+    <div id="txt_intro">
+      <h1 class="bienvenu_txt">Bienvenue chez Les Mains Propres !</h1>
+      <h2>Prêt à sauver la planète ?</h2>
+      <p class="txt_index" id="intro_txt">Chez Les Mains Propres, nous croyons que chaque geste compte pour une hygiène
+        plus saine et respectueuse de l'environnement. Découvrez notre mission et nos engagements pour offrir des
+        produits naturels, durables et respectueux de notre planète.</p>
+      <h2 id="engagement_titre">Les engagements de LMP</h2>
+      <p class="txt_index" id="engagement_txt">Nous sommes dévoués à la préservation de notre environnement grâce à des
+        produits éthiques et durables. Chez Les Mains Propres, chaque savon solide est fabriqué à partir d'ingrédients
+        naturels soigneusement choisis, sans produits chimiques agressifs ni additifs artificiels. Nous vous proposons
+        une alternative efficace pour un mode de vie plus sain et respectueux de l’écosystème. Notre objectif est de
+        réduire l'impact écologique tout en offrant une expérience de soin de la peau unique et bénéfique.
+      <p>
     </div>
 
-    <footer><p>&copy; 2024 Les Mains Propres. Tous droits réservés.</p></footer>
+    <img id="intro_img" src="../../assets/photo_intro.jpg" alt="photo d'un savon entouré d'éléments naturels">
+  </div>
 
-  </body>
+  <footer>
+    <p>&copy; 2024 Les Mains Propres. Tous droits réservés.</p>
+  </footer>
+
+</body>
+
+<script src="js/script_index.js"></script>
+
 </html>

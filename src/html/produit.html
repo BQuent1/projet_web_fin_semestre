@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notre produit - Les Mains Propres</title>
+    <link rel="icon" href="icon.png" type="image/png">
     <link rel="stylesheet" href="./css/style_produit.css">
     <link rel="stylesheet" href="./css/style_header_footer.css">
 
@@ -11,9 +12,18 @@
 <body>
     <header>
         <a href="./index.html"><img id="logo" src="../../assets/logo.png" width="120px" alt="logo"></a>
-        <a href="./produit.html" class="header_buttons">Notre produit</a>
-        <a href="./facture.html" class="header_buttons">Commander</a>
-    </header> 
+        <nav>
+          <ul id="menu">
+            <li><a href="./produit.html" class="header_buttons">Notre produit</a></li>
+            <li><a href="./facture.html" class="header_buttons">Commander</a></li>
+          </ul>
+          <button id="burger-menu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </header> 
 
     <main class="container">
         <section class="product-presentation">
@@ -48,4 +58,8 @@
     <footer><p>&copy; 2024 Les Mains Propres. Tous droits réservés.</p></footer>
 
 </body>
+
+<script src="js/script_produit.js"></script>
+
+
 </html>
