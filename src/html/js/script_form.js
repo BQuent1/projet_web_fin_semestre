@@ -1,92 +1,66 @@
-let val_code_postal = document.getElementById("code_postal");
-let message_code_postal = document.getElementById("message_cp");
+let valCodePostal = document.getElementById("code_postal");
+let messageCodePostal = document.getElementById("message_cp");
 
-let val_num_telephone = document.getElementById("telephone");
-let message_num_telephone = document.getElementById("verif_telephone");
+let valNumTelephone = document.getElementById("telephone");
+let messageNumTelephone = document.getElementById("verif_telephone");
 
-let val_tva = document.getElementById("tva");
-let message_tva = document.getElementById("verif_tva");
+let valTva = document.getElementById("tva");
+let messageTva = document.getElementById("verif_tva");
 
-let val_nom = document.getElementById("nom");
+let valNom = document.getElementById("nom");
 
-let fleche_haut = document.getElementById("arrowTop");
+let flecheHaut = document.getElementById("arrowTop");
 
-//script menu burger
-const burgerMenu = document.getElementById('burger-menu');
-const menu = document.querySelector('#menu');
+// vérification CP
+let exRegCp = /^\d{5}$/;
+let selectVille = document.getElementById("select_ville");
+valCodePostal.addEventListener("input", async function () {
+    if (valCodePostal.value === "") {
+        messageCodePostal.style.display = "none";
+        valCodePostal.setCustomValidity("");
 
-burgerMenu.addEventListener('click', () => {
-    menu.classList.toggle('open');
-    burgerMenu.classList.toggle('active');
-});
+        let premierEnfant = selectVille.firstElementChild;
 
-
-
-
-//vérification CP
-ex_reg_cp = /^\d{5}$/;
-let select_ville = document.getElementById("select_ville");
-val_code_postal.addEventListener("input", async function () {
-    if (val_code_postal.value === "") {
-        message_code_postal.style.display = "none";
-        val_code_postal.setCustomValidity("");
-
-        let premierEnfant = select_ville.firstElementChild;
-
-        while (select_ville.childNodes.length > 1) {
-            select_ville.removeChild(select_ville.lastChild);
+        while (selectVille.childNodes.length > 1) {
+            selectVille.removeChild(selectVille.lastChild);
         }
 
-        select_ville.insertBefore(premierEnfant, select_ville.firstChild);
-    }
+        selectVille.insertBefore(premierEnfant, selectVille.firstChild);
+    } else if (exRegCp.test(valCodePostal.value)) {
+        messageCodePostal.style.display = "block";
+        messageCodePostal.textContent = "✓";
+        messageCodePostal.style.color = "green";
+        valCodePostal.setCustomValidity("");
 
-
-    else if (ex_reg_cp.test(val_code_postal.value)) {
-        message_code_postal.style.display = "block";
-        message_code_postal.textContent = "✓";
-        message_code_postal.style.color = "green";
-        val_code_postal.setCustomValidity("");
-
-        let data_cp = val_code_postal.value;
-        let fetchResult = await fetch('https://apicarto.ign.fr/api/codes-postaux/communes/' + data_cp);
+        let dataCp = valCodePostal.value;
+        let fetchResult = await fetch('https://apicarto.ign.fr/api/codes-postaux/communes/' + dataCp);
 
         let data = await fetchResult.json();
-        let nbr_commune = data.length;
+        let nbrCommune = data.length;
 
-        //console.log(data);
-
-        for (let i = 0; i < nbr_commune; i++) {
+        for (let i = 0; i < nbrCommune; i++) {
             let opt = document.createElement("option");
             opt.value = data[i]["nomCommune"];
             opt.innerHTML = data[i]["nomCommune"];
-            select_ville.add(opt);
+            selectVille.add(opt);
+        }
+    } else {
+        messageCodePostal.style.display = "none";
+        valCodePostal.setCustomValidity("Le numéro doit contenir 5 chiffres");
+
+        let premierEnfant = selectVille.firstElementChild;
+
+        while (selectVille.childNodes.length > 1) {
+            selectVille.removeChild(selectVille.lastChild);
         }
 
-
+        selectVille.insertBefore(premierEnfant, selectVille.firstChild);
     }
-
-    else {
-        message_code_postal.style.display = "none";
-        val_code_postal.setCustomValidity("Le numéro doit contenir 5 chiffres");
-
-        let premierEnfant = select_ville.firstElementChild;
-
-        while (select_ville.childNodes.length > 1) {
-            select_ville.removeChild(select_ville.lastChild);
-        }
-
-        select_ville.insertBefore(premierEnfant, select_ville.firstChild);
-    }
-    val_code_postal.reportValidity();
-})
-
-
-
-
+    valCodePostal.reportValidity();
+});
 
 const textareaAdresse = document.querySelector('.adresse_txta');
 const inputCodePostal = document.getElementById('code_postal');
-const selectVille = document.getElementById('select_ville');
 const buttonSearch = document.getElementById('search_button'); // Bouton de recherche
 
 const map = L.map('map').setView([46.603354, 1.888334], 5); // Vue initiale sur Paris
@@ -97,7 +71,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 map.scrollWheelZoom.disable();
-
 
 function verifierChamps() {
     const adresse = textareaAdresse.value.trim();
@@ -115,16 +88,13 @@ selectVille.addEventListener('change', verifierChamps);
 
 document.addEventListener('DOMContentLoaded', verifierChamps);
 
-
-
-function verifPrix(){
+function verifPrix() {
     const prix = 12.99;
-    const txt_prix = document.getElementById('prix');
+    const txtPrix = document.getElementById('prix');
     const quantite = document.getElementById('quantite').value;
 
-    txt_prix.innerText = "Prix total : " + quantite * prix + "€";
+    txtPrix.innerText = "Prix total : " + quantite * prix + "€";
 }
-
 
 document.getElementById('quantite').addEventListener('change', verifPrix);
 
@@ -158,7 +128,6 @@ async function afficherAdresseSurCarte() {
         console.error('Erreur lors de la recherche de l’adresse :', error);
         alert('Une erreur est survenue lors de la recherche de l’adresse.');
         adresseValide = false;
-
     }
 }
 
@@ -167,29 +136,25 @@ buttonSearch.addEventListener('click', (event) => {
     afficherAdresseSurCarte();
 });
 
-//vérification num téléphone
-ex_reg_tel = /^\d{10}$/;
-val_num_telephone.addEventListener("input", function () {
-    if (val_num_telephone.value === "") {
-        message_num_telephone.style.display = "none";
-        val_num_telephone.setCustomValidity("");
+// vérification num téléphone
+let exRegTel = /^\d{10}$/;
+valNumTelephone.addEventListener("input", function () {
+    if (valNumTelephone.value === "") {
+        messageNumTelephone.style.display = "none";
+        valNumTelephone.setCustomValidity("");
+    } else if (exRegTel.test(valNumTelephone.value)) {
+        valNumTelephone.setCustomValidity("");
+        messageNumTelephone.style.display = "block";
+        messageNumTelephone.textContent = "✓";
+        messageNumTelephone.style.color = "green";
+    } else {
+        messageNumTelephone.style.display = "none";
+        valNumTelephone.setCustomValidity("Le numéro doit contenir 10 chiffres");
     }
+    valNumTelephone.reportValidity();
+});
 
-    else if (ex_reg_tel.test(val_num_telephone.value)) {
-        val_num_telephone.setCustomValidity("");
-        message_num_telephone.style.display = "block";
-        message_num_telephone.textContent = "✓";
-        message_num_telephone.style.color = "green";
-    }
-    else {
-        message_num_telephone.style.display = "none";
-        val_num_telephone.setCustomValidity("Le numéro doit contenir 10 chiffres");
-    }
-    val_num_telephone.reportValidity();
-})
-
-
-//vérifier l'adresse avant l'envoi du formulaire
+// vérifier l'adresse avant l'envoi du formulaire
 const form = document.getElementById('form_commande');
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -202,26 +167,20 @@ form.addEventListener('submit', async (event) => {
     form.submit();
 });
 
+// mettre le nom en majuscule
+valNom.addEventListener("input", function () {
+    valNom.style.textTransform = "uppercase";
+});
 
-
-//mettre le nom en majuscule
-val_nom.addEventListener("input", function () {
-    val_nom.style.textTransform = "uppercase";
-})
-
-
-
-//fleche permettant de remonter en haut de la page
+// flèche permettant de remonter en haut de la page
 window.addEventListener('scroll', function () {
     if (this.window.scrollY >= 150) {
-        fleche_haut.hidden = false;
-    }
-    else {
-        fleche_haut.hidden = true;
+        flecheHaut.hidden = false;
+    } else {
+        flecheHaut.hidden = true;
     }
 });
 
-fleche_haut.addEventListener("click", function () {
+flecheHaut.addEventListener("click", function () {
     window.scroll(0, 0);
-})
-
+});

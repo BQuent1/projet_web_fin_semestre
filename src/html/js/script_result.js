@@ -9,13 +9,3 @@ document.getElementById("recap_adresse").textContent = queryParams.get("adresse"
 document.getElementById("recap_cp").textContent = queryParams.get("CP") || "Non renseigné";
 document.getElementById("recap_ville").textContent = queryParams.get("ville") || "Non renseignée";
 document.getElementById("recap_quantite").textContent = queryParams.get("quantite") || "Non spécifiée";
-
-
-//script menu burger
-const burgerMenu = document.getElementById('burger-menu');
-const menu = document.querySelector('#menu');
-
-burgerMenu.addEventListener('click', () => {
-    menu.classList.toggle('open');
-    burgerMenu.classList.toggle('active');
-});
