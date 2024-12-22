@@ -88,16 +88,6 @@ selectVille.addEventListener('change', verifierChamps);
 
 document.addEventListener('DOMContentLoaded', verifierChamps);
 
-function verifPrix() {
-    const prix = 12.99;
-    const txtPrix = document.getElementById('prix');
-    const quantite = document.getElementById('quantite').value;
-
-    txtPrix.innerText = "Prix total : " + quantite * prix + "€";
-}
-
-document.getElementById('quantite').addEventListener('change', verifPrix);
-
 let adresseValide = false;
 
 async function afficherAdresseSurCarte() {
@@ -119,6 +109,8 @@ async function afficherAdresseSurCarte() {
         }
 
         adresseValide = true;
+        loadingContainer.style.display = 'none';
+
 
         const { lat, lon } = data[0];
 
@@ -128,6 +120,8 @@ async function afficherAdresseSurCarte() {
         console.error('Erreur lors de la recherche de l’adresse :', error);
         alert('Une erreur est survenue lors de la recherche de l’adresse.');
         adresseValide = false;
+    } finally {
+        loadingContainer.style.display = 'none';
     }
 }
 
